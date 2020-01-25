@@ -1,6 +1,11 @@
 import React from "react";
 
-export const FighterBox = ({ available, setUsed, setPick, toFileName }) => {
+export const FighterBox = ({
+  available,
+  fighterClick,
+  setPick,
+  toFileName
+}) => {
   var fighters = [];
   for (var x in available) {
     if (available[x]) {
@@ -9,25 +14,20 @@ export const FighterBox = ({ available, setUsed, setPick, toFileName }) => {
   }
   const images = require.context("./fighter-images", true);
   return (
-    <div className="App">
-      <div className="centered-column">
-        <p>SmashDown</p>
-        <div className="fighter-box" onMouseOut={() => setPick("none")}>
-          {fighters.map((val, i) => {
-            const name = toFileName(val);
-            return (
-              <img
-                src={images(`./${name}.png`)}
-                key={i}
-                alt={name}
-                height={50}
-                onClick={() => setUsed(val)}
-                onMouseOver={() => setPick(val)}
-              />
-            );
-          })}
-        </div>
-      </div>
+    <div className="fighter-box" onMouseOut={() => setPick("none")}>
+      {fighters.map((val, i) => {
+        const name = toFileName(val);
+        return (
+          <img
+            src={images(`./${name}.png`)}
+            key={i}
+            alt={name}
+            height={50}
+            onClick={() => fighterClick(val)}
+            onMouseOver={() => setPick(val)}
+          />
+        );
+      })}
     </div>
   );
 };

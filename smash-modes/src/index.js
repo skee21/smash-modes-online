@@ -2,9 +2,6 @@ import React from "react";
 import ReactDOM from "react-dom";
 import "bootstrap/dist/css/bootstrap.css";
 import "./index.css";
-// import "./bootstrap.css";
-// import "./TerraGo/bootstrap.css";
-// import SystemSettingsPageContainer from "./TerraGo/SystemSettingsPageContainer";
 import App from "./App";
 
 ReactDOM.render(<App />, document.getElementById("root"));

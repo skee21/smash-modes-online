@@ -7,9 +7,9 @@
   align-items: center;
   flex-direction: column;
 }
-.centered-column button {
+/* .centered-column button {
   width: 50px
-}
+} */
 .fighter-box {
   background-image: linear-gradient(150deg  , #37b6ea, #f9d045);
 }
@@ -46,4 +46,12 @@
   align-items: center;
   justify-content: center;
   flex-grow: 1;
+}
+#setup {
+  padding: 15px;
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+} #setup > * {
+  flex-grow: 1
 }
