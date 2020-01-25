@@ -2,37 +2,48 @@
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.centered-column {
   display: flex;
+  align-items: center;
   flex-direction: column;
+}
+.centered-column button {
+  width: 50px
+}
+.fighter-box {
+  background-image: linear-gradient(150deg  , #37b6ea, #f9d045);
+}
+.player-box {
+  width: 200px;
+  height: 300px;
+  background: #fe3636;
+  margin-bottom: 25px;
+  border: 1px solid black;
+  position: relative;
+  display: inline-flex;
+} .player-box img {
+  clip-path: inset(0px 0px 22px 0px);
+  width: 93px;
+  height: 320px;
+  border-right: 1px solid grey;
+}
+.blue {
+  background: #74a9f9;
+}
+.win-circle {
+  border-radius: 50%;
+  border: 1px solid black;
+  background: gold;
+  position: absolute;
+  top: -20px;
+  left: -20px;
+  width: 40px;
+  height: 40px;
+  z-index: 2;
+}
+.perfect-center {
+  display: flex;
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
-
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+  flex-grow: 1;
 }
