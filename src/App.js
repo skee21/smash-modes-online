@@ -1,5 +1,6 @@
 import React from "react";
 import fighters from "./fighterNames.json";
+import translation from "./translation.json";
 import { FighterBox } from "./FighterBox.js";
 import { Button } from "react-bootstrap";
 import "./App.css";
@@ -42,7 +43,9 @@ class App extends React.Component {
         rebuilt += x;
       }
     }
-    return rebuilt.toLowerCase();
+    var name = rebuilt.toLowerCase();
+    name = Object.keys(translation).includes(name) ? translation[name] : name;
+    return name;
   };
   fighterClick = () => {
     const { available, p1, p2, turn, p1Pick, p2Pick } = this.state;
@@ -77,14 +80,18 @@ class App extends React.Component {
     } else {
       p2Wins += 1;
     }
+    this.setState({ p1: { ...p1, wins: p1Wins }, p2: { ...p2, wins: p2Wins } });
     if (p1Wins >= this.maxWins) {
       this.setState({ winner: p1.name, gameMode: 3 });
     } else if (p2Wins >= this.maxWins) {
       this.setState({ winner: p2.name, gameMode: 3 });
+    } else if (totalBattles + 1 >= this.maxBattles) {
+      this.setState({
+        winner: p1Wins >= p2Wins ? p1.name : p2.name,
+        gameMode: 3
+      });
     } else {
       this.setState({
-        p1: { ...p1, wins: p1Wins },
-        p2: { ...p2, wins: p2Wins },
         gameMode: 1,
         p1Pick: "none",
         p2Pick: "none",
@@ -113,7 +120,6 @@ class App extends React.Component {
       p2Pick,
       totalBattles
     } = this.state;
-    const images = require.context("./fighter-images", true);
     if (gameMode === 0) {
       return <Setup fighterLength={fighters.length} startGame={startGame} />;
     } else if (gameMode === 1) {
@@ -144,7 +150,9 @@ class App extends React.Component {
               <div className="player-box">
                 {p1Pick !== "none" && (
                   <img
-                    src={images(`./V_${toFileName(p1Pick)}.png`)}
+                    src={`https://www.smashbros.com/assets_v2/img/fighter/thumb_v/${toFileName(
+                      p1Pick
+                    )}.png`}
                     alt={p1Pick}
                   />
                 )}
@@ -156,7 +164,9 @@ class App extends React.Component {
               <div className="player-box blue">
                 {p2Pick !== "none" && (
                   <img
-                    src={images(`./V_${toFileName(p2Pick)}.png`)}
+                    src={`https://www.smashbros.com/assets_v2/img/fighter/thumb_v/${toFileName(
+                      p2Pick
+                    )}.png`}
                     alt={p2Pick}
                   />
                 )}
@@ -191,20 +201,53 @@ class App extends React.Component {
     }
     if (gameMode === 3) {
       const winRoster = winner === p1.name ? p1.picks : p2.picks;
+      const left = ((winRoster.length - 1) * 90 + 126) / 2;
       return (
         <div className="centered-column">
-          <div>
-            {winRoster.map((name, i) => (
-              <img
-                src={images(`./${toFileName(name)}.png`)}
+          <p>{`${winner} wins!`}</p>
+          <div style={{ position: "relative", left: -left }}>
+            {winRoster.reverse().map((name, i) => (
+              <div
+                style={{
+                  border: "1px solid black",
+                  borderRadius: 10,
+                  background: "lightgoldenrodyellow",
+                  position: "absolute",
+                  left: i * 90,
+                  top: i * 10,
+                  zIndex: -i
+                }}
                 key={i}
-                alt={name}
-              />
+              >
+                <img
+                  src={`https://www.smashbros.com/assets_v2/img/fighter/thumb_v/${toFileName(
+                    name
+                  )}.png`}
+                  key={i}
+                  alt={name}
+                  style={{ borderRadius: 10 }}
+                />
+              </div>
             ))}
           </div>
-          <Button onClick={() => this.setState(initialState())}>
+          <Button
+            style={{ position: "fixed", bottom: 60 }}
+            onClick={() => this.setState(initialState())}
+          >
             Start Over
           </Button>
+          <div
+            style={{ position: "fixed", right: 75, top: 50, display: "flex" }}
+          >
+            <div className="centered-column" style={{ marginRight: 15 }}>
+              <div className="win-circle perfect-center">{p1.wins}</div>
+              <p>{p1.name}</p>
+            </div>
+            <div className="centered-column">
+              <div className="win-circle perfect-center">{p2.wins}</div>
+              <p>{p2.name}</p>
+            </div>
+          </div>
         </div>
       );
     }
