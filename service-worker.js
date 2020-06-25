@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/4.3.1/workbox-sw.js");
 
 importScripts(
-  "/smash-modes-online/precache-manifest.b560b7b9e9cd122db5486670da3b44d7.js"
+  "/smash-modes-online/precache-manifest.756538f3526acbecd54372e3720f43e5.js"
 );
 
 self.addEventListener('message', (event) => {

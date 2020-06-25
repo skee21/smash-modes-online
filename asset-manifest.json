@@ -1,25 +1,25 @@
 {
   "files": {
     "main.css": "/smash-modes-online/static/css/main.987cf06c.chunk.css",
-    "main.js": "/smash-modes-online/static/js/main.621d978a.chunk.js",
-    "main.js.map": "/smash-modes-online/static/js/main.621d978a.chunk.js.map",
-    "runtime-main.js": "/smash-modes-online/static/js/runtime-main.05055eea.js",
-    "runtime-main.js.map": "/smash-modes-online/static/js/runtime-main.05055eea.js.map",
+    "main.js": "/smash-modes-online/static/js/main.90b625f6.chunk.js",
+    "main.js.map": "/smash-modes-online/static/js/main.90b625f6.chunk.js.map",
+    "runtime-main.js": "/smash-modes-online/static/js/runtime-main.36d0da2e.js",
+    "runtime-main.js.map": "/smash-modes-online/static/js/runtime-main.36d0da2e.js.map",
     "static/css/2.829c9cb5.chunk.css": "/smash-modes-online/static/css/2.829c9cb5.chunk.css",
-    "static/js/2.05f968dc.chunk.js": "/smash-modes-online/static/js/2.05f968dc.chunk.js",
-    "static/js/2.05f968dc.chunk.js.map": "/smash-modes-online/static/js/2.05f968dc.chunk.js.map",
+    "static/js/2.ffe220f1.chunk.js": "/smash-modes-online/static/js/2.ffe220f1.chunk.js",
+    "static/js/2.ffe220f1.chunk.js.map": "/smash-modes-online/static/js/2.ffe220f1.chunk.js.map",
     "index.html": "/smash-modes-online/index.html",
-    "precache-manifest.b560b7b9e9cd122db5486670da3b44d7.js": "/smash-modes-online/precache-manifest.b560b7b9e9cd122db5486670da3b44d7.js",
+    "precache-manifest.756538f3526acbecd54372e3720f43e5.js": "/smash-modes-online/precache-manifest.756538f3526acbecd54372e3720f43e5.js",
     "service-worker.js": "/smash-modes-online/service-worker.js",
     "static/css/2.829c9cb5.chunk.css.map": "/smash-modes-online/static/css/2.829c9cb5.chunk.css.map",
     "static/css/main.987cf06c.chunk.css.map": "/smash-modes-online/static/css/main.987cf06c.chunk.css.map",
-    "static/js/2.05f968dc.chunk.js.LICENSE": "/smash-modes-online/static/js/2.05f968dc.chunk.js.LICENSE"
+    "static/js/2.ffe220f1.chunk.js.LICENSE.txt": "/smash-modes-online/static/js/2.ffe220f1.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
-    "static/js/runtime-main.05055eea.js",
+    "static/js/runtime-main.36d0da2e.js",
     "static/css/2.829c9cb5.chunk.css",
-    "static/js/2.05f968dc.chunk.js",
+    "static/js/2.ffe220f1.chunk.js",
     "static/css/main.987cf06c.chunk.css",
-    "static/js/main.621d978a.chunk.js"
+    "static/js/main.90b625f6.chunk.js"
   ]
 }
