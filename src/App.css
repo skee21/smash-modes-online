@@ -12,6 +12,7 @@
 } */
 .fighter-box {
   background-image: linear-gradient(150deg  , #37b6ea, #f9d045);
+  text-align: center
 }
 .player-box {
   width: 200px;
@@ -34,12 +35,14 @@
   border-radius: 50%;
   border: 1px solid black;
   background: gold;
-  position: absolute;
-  top: -20px;
-  left: -20px;
   width: 40px;
   height: 40px;
   z-index: 2;
+}
+.player-box .win-circle {
+  position: absolute;
+  top: -20px;
+  left: -20px;
 }
 .perfect-center {
   display: flex;
@@ -48,10 +51,11 @@
   flex-grow: 1;
 }
 #setup {
-  padding: 15px;
+  padding: 25px;
   display: flex;
   flex-direction: column;
   align-items: stretch;
+  max-width: 600px;
 } #setup > * {
   flex-grow: 1
 }
